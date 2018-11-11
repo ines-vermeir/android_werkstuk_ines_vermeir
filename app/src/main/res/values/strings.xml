@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AndroidWerkstuk</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="Welcome">Standbeelden tour Brussel</string>
+    <string name="start">Start de tour</string>
+    <string name="ask_permision">Locatie is vereist.</string>
+    <string name="permission_ok">Toestaan</string>
+    <string name="title_activity_question">QuestionActivity</string>
+</resources>
