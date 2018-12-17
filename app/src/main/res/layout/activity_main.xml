@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="vermeir.ines.ehb.be.androidwerkstuk.MainActivity">
+    tools:context="vermeir.ines.ehb.be.androidwerkstuk.View.MainActivity">
 
     <TextView
         android:id="@+id/textView"
@@ -29,6 +29,21 @@
         android:background="@color/colorPrimary"
         android:onClick="startTheTour"
         android:text="@string/start"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_database"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp"
+        android:background="@color/colorPrimary"
+        android:onClick="goToDatabase"
+        android:text="@string/standbeeldenStart"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

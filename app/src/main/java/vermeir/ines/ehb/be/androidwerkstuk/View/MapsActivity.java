@@ -1,4 +1,4 @@
-package vermeir.ines.ehb.be.androidwerkstuk;
+package vermeir.ines.ehb.be.androidwerkstuk.View;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -33,6 +33,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import vermeir.ines.ehb.be.androidwerkstuk.Model.Statue;
+import vermeir.ines.ehb.be.androidwerkstuk.R;
 
 
 public class MapsActivity extends FragmentActivity implements View.OnClickListener, OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener, GoogleMap.OnMarkerClickListener {
@@ -192,25 +195,24 @@ public class MapsActivity extends FragmentActivity implements View.OnClickListen
     private void initializeMarkers() {
         latLngBounds = new LatLngBounds.Builder();
 
-        for (Statue statue : statues) {
-            mMap.addMarker(new MarkerOptions()
-                    .position(statue.getLatLng())
-                    .title(statue.getName()));
-            latLngBounds.include(statue.getLatLng());
-        }
-
-
-
-
-        mMap.setOnMapLoadedCallback(new GoogleMap.OnMapLoadedCallback() {
-            @Override
-            public void onMapLoaded() {
-                LatLngBounds bounds = latLngBounds.build();
-                CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngBounds(bounds, 100);
-                mMap.moveCamera(cameraUpdate);
+        if(statues != null && !statues.isEmpty()) {
+            for (Statue statue : statues) {
+                mMap.addMarker(new MarkerOptions()
+                        .position(statue.getLatLng())
+                        .title(statue.getName()));
+                latLngBounds.include(statue.getLatLng());
             }
-        });
 
+
+            mMap.setOnMapLoadedCallback(new GoogleMap.OnMapLoadedCallback() {
+                @Override
+                public void onMapLoaded() {
+                    LatLngBounds bounds = latLngBounds.build();
+                    CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngBounds(bounds, 100);
+                    mMap.moveCamera(cameraUpdate);
+                }
+            });
+        }
     }
 
 
@@ -240,14 +242,9 @@ public class MapsActivity extends FragmentActivity implements View.OnClickListen
     }
 
     public void setAllStatues(){
-        Statue mannekePis = new Statue("1","Manneke Pis", "Dit is manneke pis", 50.84546, 4.34915);
-        mannekePis.addQuestion("Hoe groot is manneke pis?", "53 cm");
+       //TODO: DATABASE
 
-        Statue jeanekePis = new Statue("2","Jaeneke Pis", "Dit is jeaneke pis", 50.84848, 4.35404);
-        jeanekePis.addQuestion("Tussen welke huisnummers staat Jeaneke pis?", "10 & 12");
 
-        statues.add(mannekePis);
-        statues.add(jeanekePis);
     }
 
     public void scanForQRCode(View view){
@@ -271,8 +268,9 @@ public class MapsActivity extends FragmentActivity implements View.OnClickListen
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         String result = QRCodeUtil.onScanResult(this, requestCode,resultCode,data);
+        int resultint = Integer.parseInt(result);
         for (Statue statue : statues) {
-            if(statue.getId().equals(result)){
+            if(statue.getId()== resultint){
                 goToQuestion(statue);
                 break;
             }else{
@@ -284,7 +282,7 @@ public class MapsActivity extends FragmentActivity implements View.OnClickListen
 
     private void goToQuestion(Statue statue) {
         Intent intent = new Intent(this, QuestionActivity.class);
-        intent.putExtra("statue", statue);
+        intent.putExtra("statueId", statue.getId());
         startActivity(intent);
     }
 

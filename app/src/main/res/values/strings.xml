@@ -7,4 +7,24 @@
     <string name="permission_ok">Toestaan</string>
     <string name="title_activity_question">QuestionActivity</string>
     <string name="snackbarCameraPermission">Camera permissie is nodig om QR codes te scannen.</string>
+    <string name="standbeeldenStart">Standbeelden</string>
+    <string name="info">Info</string>
+    <string name="location">Location</string>
+    <string name="descriptionMannekepis">Het 58 cm grote ventje op een sokkel is geplaatst aan de hoek van de Stoofstraat en de Eikstraat, niet ver van de Grote Markt.
+
+Het is uitgegroeid tot een van de beroemdste Belgische en Brusselse monumenten en een symbool/mascotte van de stad Brussel.
+
+Behalve het Manneken Pis van Brussel is er ook een in Geraardsbergen, Westmeerbeek, Broksele en Koksijde, maar die van Brussel is de bekendste.
+
+Vanaf 1452 verschijnt de naam Manneken Pis in de archieven.
+
+Het origineel van het huidige bronzen beeldje is door Hiëronymus Duquesnoy de Oudere in 1619 in opdracht van het stadsbestuur gemaakt als versiering van een publieke fontein. Daarbij lijkt het alsof het jongetje urineert. Bij speciale gelegenheden plast hij bier of wijn in plaats van water.
+
+Omstreeks 1745 ontvoerden Engelse soldaten hem in het geheim, maar de Brusselaars haalden de dieven in Geraardsbergen in dankzij behulpzame burgers van die stad. Als blijk van hun waardering schonken de Brusselaars deze stad een replica van het beeldje.
+
+Manneken Pis werd "ontvoerd" door de Antwerpse studentenclub de Wikings in de ijskoude nacht van 16 op 17 januari 1963. Hiermee haalde de studentenclub wereldwijd de krantenkoppen. Omdat het om een goed doel ging werden er geen sancties getroffen. De grap bracht 80.000 BEF op ten bate van mindervaliden.
+
+De replica van Manneken Pis werd op 26 april 1978 "gestolen" door studenten van Technica, als stunt voor een presesverkiezing. Ze lieten hem op hun school zijn ding doen. Als straf moesten ze een nieuw kostuum voor hem maken. Elk jaar draagt Manneken Pis dit kostuum op de dag waarop ze hun nieuwe studenten dopen en sluiten ze er een vat bier aan waardoor hij bier plast.
+</string>
+    <string name="nameMannekepis">Manneke pis</string>
 </resources>

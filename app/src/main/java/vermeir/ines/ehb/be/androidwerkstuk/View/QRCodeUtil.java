@@ -1,4 +1,4 @@
-package vermeir.ines.ehb.be.androidwerkstuk;
+package vermeir.ines.ehb.be.androidwerkstuk.View;
 
 import android.app.Activity;
 import android.content.Intent;
