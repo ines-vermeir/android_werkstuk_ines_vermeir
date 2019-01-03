@@ -5,24 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="vermeir.ines.ehb.be.androidwerkstuk.View.QuestionActivity"
+    tools:context=".View.QuestionActivity"
     tools:showIn="@layout/activity_question">
 
-    <android.support.v7.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    <TextView
-        android:id="@+id/info_statue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="79dp"
-        android:layout_marginTop="72dp"
-        android:text="TextView"
+    <ScrollView
+        android:id="@+id/scrollViewQuestions"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="79dp" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    </android.support.v7.widget.LinearLayoutCompat>
+        <LinearLayout
+            android:id="@+id/linearLayoutQ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

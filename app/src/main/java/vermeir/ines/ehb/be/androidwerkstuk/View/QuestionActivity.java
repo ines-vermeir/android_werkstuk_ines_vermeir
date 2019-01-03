@@ -1,17 +1,32 @@
 package vermeir.ines.ehb.be.androidwerkstuk.View;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.util.Iterator;
+import java.util.Map;
+
+import vermeir.ines.ehb.be.androidwerkstuk.Model.Question;
 import vermeir.ines.ehb.be.androidwerkstuk.Model.Statue;
 import vermeir.ines.ehb.be.androidwerkstuk.R;
 
-public class QuestionActivity extends AppCompatActivity implements ButtonFragment.OnFragmentInteractionListener{
+public class QuestionActivity extends AppCompatActivity {
 
     private TextView infoStatue;
     private Statue statue;
+
+    private StatueViewModel mStatuesViewModel;
+
+    LinearLayout linearLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,35 +35,58 @@ public class QuestionActivity extends AppCompatActivity implements ButtonFragmen
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
-
         Bundle data = getIntent().getExtras();
-        int statueId = data.getParcelable("statueId");
+        int statueId = data.getInt("statueId");
 
         infoStatue = findViewById(R.id.info_statue);
 
         //TODO: get statues from database
+        mStatuesViewModel = ViewModelProviders.of(this).get(StatueViewModel.class);
 
-    }
+        statue = mStatuesViewModel.getStatueById(statueId);
+        statue.setQuestions(mStatuesViewModel.getAllQuestionsStatue(statueId));
 
+        Toast.makeText(this, Integer.toString(statueId), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, Integer.toString(statue.getQuestions().size()), Toast.LENGTH_SHORT).show();
 
-    @Override
-    public void change(int id) {
-        TextFragment textFragment = (TextFragment) getSupportFragmentManager().findFragmentById(R.id.txtInfo);
-        switch (id){
-            case 1 : textFragment.setText(statue.getDescription());
-            case 2 :
-                //TODO:google places api voor adres weer te geven
-                textFragment.setText("adres");
+        linearLayout = findViewById(R.id.linearLayoutQ);
+
+        for (Question question: statue.getQuestions()) {
+            TextView q = new TextView(this);
+            q.setText(question.getQuestion());
+            linearLayout.addView(q);
+
+            Toast.makeText(this, question.getQuestion(), Toast.LENGTH_SHORT).show();
+
+            RadioGroup radioGroup = new RadioGroup(this);
+            linearLayout.addView(radioGroup);
+
+            Iterator it = question.getAnswers().entrySet().iterator();
+            while (it.hasNext()) {
+                Map.Entry pair = (Map.Entry)it.next();
+
+                RadioButton a = new RadioButton(this);
+                a.setText(pair.getKey().toString());
+                radioGroup.addView(a);
+                linearLayout.addView(a);
+
+                it.remove(); // avoids a ConcurrentModificationException
+            }
         }
 
+        Button button = new Button(this);
+        button.setText("Volgende");
+        //TODO: string value van maken
+        linearLayout.addView(button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CheckAnswers();
+            }
+        });
+    }
 
+    private void CheckAnswers(){
+        Toast.makeText(this, "vragen worden gecontroleerd", Toast.LENGTH_SHORT).show();
     }
 }

@@ -43,10 +43,14 @@
         <uses-library android:name="com.google.android.maps" />
 
         <activity
-            android:name=".View.QuestionActivity"
+            android:name=".View.InformationActivity"
             android:label="@string/title_activity_question"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".View.showDatabase"></activity>
+        <activity android:name=".View.showDatabase" />
+        <activity
+            android:name=".View.QuestionActivity"
+            android:label="@string/title_activity_question"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -18,6 +18,7 @@ public class StatuesRepository {
     private StatueDAO mStatueDAO;
     private QuestionDAO mQuestionDAO;
     private LiveData<List<Statue>> mAllStatues;
+    private List<Question> mAllQuestionsStatue;
 
     public StatuesRepository (Application application) {
         StatueRoomDatabase db =
@@ -41,6 +42,18 @@ public class StatuesRepository {
             mAllStatues = mStatueDAO.findAll();
         }
         return mAllStatues;
+    }
+
+
+    public List<Question> getAllQuestionByStatue(int id) {
+        if(mAllQuestionsStatue == null){
+            mAllQuestionsStatue = mQuestionDAO.findAllByStatue(id);
+        }
+        return mAllQuestionsStatue;
+    }
+
+    public Statue getStatueById(int id){
+        return mStatueDAO.findById(id);
     }
 
     private static class insertStatuesAsync extends AsyncTask<Statue, Void, Void> {

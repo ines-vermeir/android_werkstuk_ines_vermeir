@@ -21,6 +21,9 @@ public interface StatueDAO {
     @Query("SELECT * FROM Statue")
     public abstract LiveData<List<Statue>> findAll();
 
+    @Query("SELECT * FROM Statue WHERE id LIKE :id")
+    public Statue findById(int id);
+
     @Delete
     public void deleteStatues(Statue... statues);
 

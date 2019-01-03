@@ -21,7 +21,7 @@ public interface QuestionDAO {
     public abstract LiveData<List<Question>> findAll();
 
     @Query("SELECT * FROM Question WHERE statue_id IS :id ")
-    public abstract LiveData<List<Question>> findAllByStatue(int id);
+    public abstract List<Question> findAllByStatue(int id);
 
     @Delete
     public void deleteQuestions(Question... questions);

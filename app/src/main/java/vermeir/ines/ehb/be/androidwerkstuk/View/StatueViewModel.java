@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import java.util.List;
 
 import vermeir.ines.ehb.be.androidwerkstuk.Data.StatuesRepository;
+import vermeir.ines.ehb.be.androidwerkstuk.Model.Question;
 import vermeir.ines.ehb.be.androidwerkstuk.Model.Statue;
 
 /**
@@ -16,7 +17,8 @@ import vermeir.ines.ehb.be.androidwerkstuk.Model.Statue;
 
 public class StatueViewModel extends AndroidViewModel {
     private StatuesRepository statuesRepository;
-    private LiveData<List<Statue>> mAllStatues;  // artist cache
+    private LiveData<List<Statue>> mAllStatues;
+    private List<Question> mAllQuestionStatues;
 
     public StatueViewModel(@NonNull Application application) {
         super(application);
@@ -28,7 +30,14 @@ public class StatueViewModel extends AndroidViewModel {
         return mAllStatues;
     }
 
+    public List<Question> getAllQuestionsStatue(int id){
+        mAllQuestionStatues = statuesRepository.getAllQuestionByStatue(id);
+        return  mAllQuestionStatues;
+    }
 
+    public Statue getStatueById(int id){
+        return statuesRepository.getStatueById(id);
+    }
 
     public void insert(Statue statues) {
         statuesRepository.insertStatues(statues);

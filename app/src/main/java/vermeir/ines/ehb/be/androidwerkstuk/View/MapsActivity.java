@@ -2,6 +2,8 @@ package vermeir.ines.ehb.be.androidwerkstuk.View;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
@@ -26,6 +28,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
@@ -54,6 +57,8 @@ public class MapsActivity extends FragmentActivity implements View.OnClickListen
     private LatLngBounds.Builder latLngBounds;
 
     private ImageButton qrButton;
+
+    private StatueViewModel mStatuesViewModel;
 
     private static final int MY_PERMISSIONS_REQUEST_LOCATION = 10;
     private static final int MY_PERMISION_REQUEST_CAMERA = 20;
@@ -136,9 +141,21 @@ public class MapsActivity extends FragmentActivity implements View.OnClickListen
 
 
 
+        mStatuesViewModel = ViewModelProviders.of(this).get(StatueViewModel.class);
 
+        mStatuesViewModel.getAllStatues().observe(this, new Observer<List<Statue>>() {
+
+            @Override
+            public void onChanged(@Nullable List<Statue> statuesdb) {
+                if(statuesdb != null){
+                    statues = statuesdb;
+                    Log.d("observe", Integer.toString(statuesdb.size()));
+                }
+                initializeMarkers();
+            }
+        });
         //place all markers
-        initializeMarkers();
+        //initializeMarkers();
 
 
     }
@@ -185,22 +202,21 @@ public class MapsActivity extends FragmentActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-        // Request the permission
-        /*ActivityCompat.requestPermissions(MapsActivity.this,
-                new String[]{Manifest.permission.CAMERA},
-                MY_PERMISSIONS_REQUEST_LOCATION);*/
+
     }
 
 
     private void initializeMarkers() {
         latLngBounds = new LatLngBounds.Builder();
 
-        if(statues != null && !statues.isEmpty()) {
+        Toast.makeText(this, Integer.toString(statues.size()), Toast.LENGTH_SHORT).show();
+
+        if(statues != null && !statues.isEmpty() ) {
             for (Statue statue : statues) {
                 mMap.addMarker(new MarkerOptions()
-                        .position(statue.getLatLng())
+                        .position(new LatLng(statue.getLat(), statue.getLng()))
                         .title(statue.getName()));
-                latLngBounds.include(statue.getLatLng());
+                latLngBounds.include(new LatLng(statue.getLat(), statue.getLng()));
             }
 
 
@@ -242,9 +258,24 @@ public class MapsActivity extends FragmentActivity implements View.OnClickListen
     }
 
     public void setAllStatues(){
-       //TODO: DATABASE
 
+        Toast.makeText(this, "get all statues", Toast.LENGTH_SHORT).show();
+        mStatuesViewModel = ViewModelProviders.of(this).get(StatueViewModel.class);
 
+        mStatuesViewModel.getAllStatues().observe(this, new Observer<List<Statue>>() {
+            @Override
+            public void onChanged(@Nullable List<Statue> statuesdb) {
+                if(statuesdb != null){
+                    statues.addAll(statuesdb);
+                    Log.d("observe", Integer.toString(statuesdb.size()));
+                }
+            }
+        });
+
+        if(mStatuesViewModel.getAllStatues().getValue() != null) {
+            statues.addAll(mStatuesViewModel.getAllStatues().getValue());
+        }
+        Toast.makeText(this, Integer.toString(statues.size()), Toast.LENGTH_SHORT).show();
     }
 
     public void scanForQRCode(View view){
