@@ -1,3 +1,5 @@
+
+<!-- TODO: string resource in zelfde taal + tweede taal -->
 <resources>
     <string name="app_name">AndroidWerkstuk</string>
     <string name="title_activity_maps">Map</string>
@@ -30,4 +32,5 @@ De replica van Manneken Pis werd op 26 april 1978 "gestolen" door studenten van 
     <string name="jeanekepis">Jeaneke pis</string>
     <string name="leopold">Ruitersstandbeeld Leopold II</string>
     <string name="godfried">Godfried van Bouillon</string>
+    <string name="continue_the_tour">Continue the tour</string>
 </resources>

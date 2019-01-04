@@ -1,9 +1,11 @@
 package vermeir.ines.ehb.be.androidwerkstuk.View;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.TextView;
 
 import vermeir.ines.ehb.be.androidwerkstuk.Model.Statue;
@@ -23,40 +25,38 @@ public class InformationActivity extends AppCompatActivity implements ButtonFrag
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
 
         Bundle data = getIntent().getExtras();
         int statueId = data.getInt("statueId");
 
-        infoStatue = findViewById(R.id.info_statue);
 
-        //TODO: get statues from database
+
         mStatuesViewModel = ViewModelProviders.of(this).get(StatueViewModel.class);
-
         statue = mStatuesViewModel.getStatueById(statueId);
-        statue.setQuestions(mStatuesViewModel.getAllQuestionsStatue(statueId));
 
+        statue.setComplete(Boolean.TRUE);
 
+        mStatuesViewModel.update(statue);
     }
 
 
     @Override
     public void change(int id) {
-        TextFragment textFragment = (TextFragment) getSupportFragmentManager().findFragmentById(R.id.txtInfo);
+        TextFragment textFragment = (TextFragment) getSupportFragmentManager().findFragmentById(R.id.textFragment);
         switch (id){
-            case 1 : textFragment.setText(statue.getDescription());
+            case 1 : textFragment.setTextFragment(statue.getDescription()); break;
             case 2 :
                 //TODO:google places api voor adres weer te geven
-                textFragment.setText("adres");
+                textFragment.setTextFragment("adres"); break;
         }
 
 
+    }
+
+    public void backToMap(View view) {
+        Intent intent = new Intent(this, MapsActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
     }
 }

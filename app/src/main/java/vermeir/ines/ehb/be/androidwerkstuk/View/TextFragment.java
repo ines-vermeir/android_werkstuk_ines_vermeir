@@ -28,12 +28,15 @@ public class TextFragment extends Fragment {
 
         textViewInfo = view.findViewById(R.id.txtInfo);
 
+
+
         return view;
     }
 
 
 
-    public void setText(String description) {
+    public void setTextFragment(String description) {
+
         textViewInfo.setText(description);
     }
 

@@ -36,10 +36,18 @@ public class StatueViewModel extends AndroidViewModel {
     }
 
     public Statue getStatueById(int id){
-        return statuesRepository.getStatueById(id);
+        return statuesRepository.getStatueByIdWithQ(id);
     }
 
     public void insert(Statue statues) {
         statuesRepository.insertStatues(statues);
+    }
+
+    public void update(Statue statues) {
+        statuesRepository.updateStatues(statues);
+    }
+
+    public List<Statue> getStatuesWithQuestions(){
+        return statuesRepository.getStatuesWithQuestions();
     }
 }

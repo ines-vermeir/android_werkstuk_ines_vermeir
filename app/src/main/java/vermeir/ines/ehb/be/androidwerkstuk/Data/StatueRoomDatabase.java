@@ -6,6 +6,7 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.google.android.gms.maps.model.LatLng;
 
@@ -22,7 +23,7 @@ import vermeir.ines.ehb.be.androidwerkstuk.R;
  * Created by Ines on 7/12/2018.
  */
 
-@Database(entities = {Statue.class, Question.class}, version = 3)
+@Database(entities = {Statue.class, Question.class}, version = 4, exportSchema = false)
 public abstract class StatueRoomDatabase extends RoomDatabase {
 
     public abstract StatueDAO statueDAO();
@@ -47,7 +48,9 @@ public abstract class StatueRoomDatabase extends RoomDatabase {
                                             Executors.newSingleThreadScheduledExecutor().execute(new Runnable() {
                                                 @Override
                                                 public void run() {
-                                                    getDatabase(context).statueDAO().insertStatues(populateData(context));
+                                                    Log.e("ERROR DAO", "Voor insert");
+                                                   getDatabase(context).statueDAO().insertStatueWithQuestions(populateData(context));
+                                                    Log.e("ERROR DAO", "na insert");
                                                 }
                                             });
                                         }
@@ -62,7 +65,7 @@ public abstract class StatueRoomDatabase extends RoomDatabase {
     }
 
 
-    public static Statue[] populateData(final Context context) {
+    public static List<Statue> populateData(final Context context) {
 
 //TODO: alles in string resource zetten
         //1 STANDBEELD
@@ -104,11 +107,13 @@ public abstract class StatueRoomDatabase extends RoomDatabase {
         //standbeeld aanmaken
         Statue mannekepis = new Statue(1, context.getString(R.string.nameMannekepis), context.getString(R.string.descriptionMannekepis), new LatLng(50.8450905,4.3490178),questions11);
 
+        //getDatabase(context).statueDAO().insertStatueWithQuestions(mannekepis,questions11);
+
         //_____________________________________________________________
         //2 STANDBEELD
         //antwoorden voor vraag
         HashMap<String, Boolean> answers21 = new HashMap<>();
-        answers21.put("1987 cm",true);
+        answers21.put("1987",true);
         answers21.put("1948", false);
         answers21.put("2002", false);
         //Vraag
@@ -141,6 +146,8 @@ public abstract class StatueRoomDatabase extends RoomDatabase {
         //standbeeld aanmaken
         Statue jeanekepis = new Statue(2, context.getString(R.string.jeanekepis), context.getString(R.string.descriptionMannekepis), new LatLng(50.8484807,4.3518519),questions21);
 //TODO: change description to jeaneke pis
+
+        //getDatabase(context).statueDAO().insertStatueWithQuestions(jeanekepis, questions21);
 //_____________________________________________________________
         //3 STANDBEELD
         //antwoorden voor vraag
@@ -165,6 +172,8 @@ public abstract class StatueRoomDatabase extends RoomDatabase {
         //standbeeld aanmaken
         Statue leopold = new Statue(3, context.getString(R.string.leopold), context.getString(R.string.descriptionMannekepis), new LatLng(50.8404693,4.3622069),questions31);
 //TODO: change description to leopold
+
+        //getDatabase(context).statueDAO().insertStatueWithQuestions(leopold, questions31);
         //_____________________________________________________________
         //4 STANDBEELD
         //antwoorden voor vraag
@@ -190,17 +199,15 @@ public abstract class StatueRoomDatabase extends RoomDatabase {
         Statue godfried = new Statue(4, context.getString(R.string.godfried), context.getString(R.string.descriptionMannekepis), new LatLng(50.8422926,4.3585692),questions41);
 //TODO: change description to godfried
 
-        //_____________________________________________________________
-        questionDAO().insertQuestions(question11);
-        questionDAO().insertQuestions(question12);
-        questionDAO().insertQuestions(question21);
-        questionDAO().insertQuestions(question22);
-        questionDAO().insertQuestions(question31);
-        questionDAO().insertQuestions(question41);
-
+        //getDatabase(context).statueDAO().insertStatueWithQuestions(godfried, questions41);
         //______________________________________________________________
-        return new Statue[] {
-                mannekepis, jeanekepis, leopold, godfried
-        };
+
+        List<Statue> statues = new ArrayList<>();
+        statues.add(mannekepis);
+        statues.add(jeanekepis);
+        statues.add(leopold);
+        statues.add(godfried);
+        return statues;
+
     }
 }

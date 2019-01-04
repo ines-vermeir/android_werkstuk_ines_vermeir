@@ -90,7 +90,8 @@ public class MapsActivity extends FragmentActivity implements View.OnClickListen
 
     }
 
-
+    //TODO map en qr code komen niet overeen
+    //TODO zorgen dat de locatie wordt gevolgd
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -205,11 +206,9 @@ public class MapsActivity extends FragmentActivity implements View.OnClickListen
 
     }
 
-
+    //TODO: markers maken zodat deze van kleur veranderen wanneer complete
     private void initializeMarkers() {
         latLngBounds = new LatLngBounds.Builder();
-
-        Toast.makeText(this, Integer.toString(statues.size()), Toast.LENGTH_SHORT).show();
 
         if(statues != null && !statues.isEmpty() ) {
             for (Statue statue : statues) {
@@ -259,7 +258,6 @@ public class MapsActivity extends FragmentActivity implements View.OnClickListen
 
     public void setAllStatues(){
 
-        Toast.makeText(this, "get all statues", Toast.LENGTH_SHORT).show();
         mStatuesViewModel = ViewModelProviders.of(this).get(StatueViewModel.class);
 
         mStatuesViewModel.getAllStatues().observe(this, new Observer<List<Statue>>() {
@@ -275,7 +273,6 @@ public class MapsActivity extends FragmentActivity implements View.OnClickListen
         if(mStatuesViewModel.getAllStatues().getValue() != null) {
             statues.addAll(mStatuesViewModel.getAllStatues().getValue());
         }
-        Toast.makeText(this, Integer.toString(statues.size()), Toast.LENGTH_SHORT).show();
     }
 
     public void scanForQRCode(View view){

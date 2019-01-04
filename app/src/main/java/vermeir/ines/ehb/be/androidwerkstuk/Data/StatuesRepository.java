@@ -32,6 +32,10 @@ public class StatuesRepository {
         new insertStatuesAsync(mStatueDAO).execute(statues);
     }
 
+    public void updateStatues(Statue... statues){
+        new updateStatuesAsync(mStatueDAO).execute(statues);
+    }
+
     public void insertQuestion(Question... questions)
     {
         new insertQuestionsAsync(mQuestionDAO).execute(questions);
@@ -52,8 +56,12 @@ public class StatuesRepository {
         return mAllQuestionsStatue;
     }
 
-    public Statue getStatueById(int id){
-        return mStatueDAO.findById(id);
+    public Statue getStatueByIdWithQ(int id){
+        return mStatueDAO.getStatuesByIdWithQ(id);
+    }
+
+    public List<Statue> getStatuesWithQuestions(){
+        return mStatueDAO.getStatuesWithQ();
     }
 
     private static class insertStatuesAsync extends AsyncTask<Statue, Void, Void> {
@@ -65,7 +73,24 @@ public class StatuesRepository {
 
         @Override
         protected Void doInBackground(Statue... statues) {
-            //statueDAO.insertStatues(statues);
+            for(Statue statue : statues){
+                statueDAO.insertStatue(statue);
+            }
+            //return DataSingleton.getInstance().downloadPlainText(strings[0]);
+            return null;
+        }
+    }
+
+    private static class updateStatuesAsync extends AsyncTask<Statue, Void, Void> {
+        private StatueDAO statueDAO;
+
+        updateStatuesAsync(StatueDAO statueDAO) {
+            this.statueDAO = statueDAO;
+        }
+
+        @Override
+        protected Void doInBackground(Statue... statues) {
+            statueDAO.updateStatue(statues);
             //return DataSingleton.getInstance().downloadPlainText(strings[0]);
             return null;
         }
@@ -85,4 +110,6 @@ public class StatuesRepository {
             return null;
         }
     }
+
+
 }
