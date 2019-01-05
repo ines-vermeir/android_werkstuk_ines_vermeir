@@ -40,7 +40,7 @@ import java.util.List;
 import vermeir.ines.ehb.be.androidwerkstuk.Model.Statue;
 import vermeir.ines.ehb.be.androidwerkstuk.R;
 
-
+//TODO controle als persmisie niet geven is
 public class MapsActivity extends FragmentActivity implements View.OnClickListener, OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener, GoogleMap.OnMarkerClickListener {
 
     private GoogleMap mMap;
@@ -90,7 +90,7 @@ public class MapsActivity extends FragmentActivity implements View.OnClickListen
 
     }
 
-    //TODO map en qr code komen niet overeen
+
     //TODO zorgen dat de locatie wordt gevolgd
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -114,7 +114,6 @@ public class MapsActivity extends FragmentActivity implements View.OnClickListen
 
 
         //ask user location
-        //TODO maak er een aparte methode van
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
             ActivityCompat.requestPermissions(

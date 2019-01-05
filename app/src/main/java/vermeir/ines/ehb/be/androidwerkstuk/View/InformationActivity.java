@@ -18,6 +18,8 @@ public class InformationActivity extends AppCompatActivity implements ButtonFrag
 
     private StatueViewModel mStatuesViewModel;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +48,7 @@ public class InformationActivity extends AppCompatActivity implements ButtonFrag
         switch (id){
             case 1 : textFragment.setTextFragment(statue.getDescription()); break;
             case 2 :
-                //TODO:google places api voor adres weer te geven
+                //TODO: iets vinden om hier te plaatsen
                 textFragment.setTextFragment("adres"); break;
         }
 

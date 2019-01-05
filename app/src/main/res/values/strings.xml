@@ -1,36 +1,75 @@
 
-<!-- TODO: string resource in zelfde taal + tweede taal -->
 <resources>
-    <string name="app_name">AndroidWerkstuk</string>
-    <string name="title_activity_maps">Map</string>
-    <string name="Welcome">Standbeelden tour Brussel</string>
-    <string name="start">Start de tour</string>
-    <string name="ask_permision">Locatie is vereist.</string>
-    <string name="permission_ok">Toestaan</string>
-    <string name="title_activity_question">QuestionActivity</string>
-    <string name="snackbarCameraPermission">Camera permissie is nodig om QR codes te scannen.</string>
-    <string name="standbeeldenStart">Standbeelden</string>
-    <string name="info">Info</string>
-    <string name="location">Location</string>
-    <string name="descriptionMannekepis">Het 58 cm grote ventje op een sokkel is geplaatst aan de hoek van de Stoofstraat en de Eikstraat, niet ver van de Grote Markt.
-
-Het is uitgegroeid tot een van de beroemdste Belgische en Brusselse monumenten en een symbool/mascotte van de stad Brussel.
-
-Behalve het Manneken Pis van Brussel is er ook een in Geraardsbergen, Westmeerbeek, Broksele en Koksijde, maar die van Brussel is de bekendste.
-
-Vanaf 1452 verschijnt de naam Manneken Pis in de archieven.
-
-Het origineel van het huidige bronzen beeldje is door Hiëronymus Duquesnoy de Oudere in 1619 in opdracht van het stadsbestuur gemaakt als versiering van een publieke fontein. Daarbij lijkt het alsof het jongetje urineert. Bij speciale gelegenheden plast hij bier of wijn in plaats van water.
-
-Omstreeks 1745 ontvoerden Engelse soldaten hem in het geheim, maar de Brusselaars haalden de dieven in Geraardsbergen in dankzij behulpzame burgers van die stad. Als blijk van hun waardering schonken de Brusselaars deze stad een replica van het beeldje.
-
-Manneken Pis werd "ontvoerd" door de Antwerpse studentenclub de Wikings in de ijskoude nacht van 16 op 17 januari 1963. Hiermee haalde de studentenclub wereldwijd de krantenkoppen. Omdat het om een goed doel ging werden er geen sancties getroffen. De grap bracht 80.000 BEF op ten bate van mindervaliden.
-
-De replica van Manneken Pis werd op 26 april 1978 "gestolen" door studenten van Technica, als stunt voor een presesverkiezing. Ze lieten hem op hun school zijn ding doen. Als straf moesten ze een nieuw kostuum voor hem maken. Elk jaar draagt Manneken Pis dit kostuum op de dag waarop ze hun nieuwe studenten dopen en sluiten ze er een vat bier aan waardoor hij bier plast.
-</string>
+    <string name="app_name">Statues challenge Brussels</string>
+    <string name="title_activity_maps"></string>
+    <string name="Welcome">Statues challenge Brussels</string>
+    <string name="start">Start the challange</string>
+    <string name="ask_permision">Location is required.</string>
+    <string name="permission_ok">allow</string>
+    <string name="title_activity_question">Questions</string>
+    <string name="snackbarCameraPermission">Camera is required to scan QR codes.</string>
+    <string name="standbeeldenStart">Statues</string>
+    <string name="info">Information about the statue</string>
+    <string name="location">Nearby</string>
     <string name="nameMannekepis">Manneke pis</string>
     <string name="jeanekepis">Jeaneke pis</string>
-    <string name="leopold">Ruitersstandbeeld Leopold II</string>
+    <string name="leopold">Horseman statue Leopold II</string>
     <string name="godfried">Godfried van Bouillon</string>
-    <string name="continue_the_tour">Continue the tour</string>
+    <string name="continue_the_tour">Continue the challange</string>
+    <string name="descriptionMannekepis">The 58 cm big boy on a pedestal is placed at the corner of the Stoofstraat and the Eikstraat, not far from the Grote Markt.
+
+It has become one of the most famous Belgian and Brussels monuments and a symbol / mascot of the city of Brussels.
+
+Besides the Manneken Pis of Brussels, there is also one in Geraardsbergen, Westmeerbeek, Broksele and Koksijde, but Brussels is the best known.
+
+From 1452 the name Manneken Pis appears in the archives.
+
+The original of the current bronze statuette was made by Hieronymus Duquesnoy the Elder in 1619 on behalf of the city council as the decoration of a public fountain. It seems as if the boy is urinating. On special occasions, he pees beer or wine instead of water.
+
+Around 1745, English soldiers kidnapped him in secret, but the people of Brussels brought in the thieves in Geraardsbergen thanks to the helpful citizens of that city. As a token of their appreciation, Brussels people gave this city a replica of the figurine.</string>
+
+    <string name="descriptionJeanekepis">Jeanneke Pis is a statue in the center of Brussels of a girl who is urinating.
+
+The figurine was placed in 1987 on the initiative of the local merchants with the intention of attracting more visitors to their street.
+
+The image is placed in the back of the dead-end Getrouwheidsgang.
+
+The statue is just between the house numbers 10 and 12.</string>
+
+    <string name="descriptionLeopold">
+This equestrian statue of King Leopold II was inaugurated on November 15, 1926, about the same place where Leopold II himself ever took his oath. Leopold II was king of Belgium from 1865 until his death in 1909. This bronze statue was made by sculptor Thomas Vinçotte and architect François Malfait.
+
+Inscription at the end of the sculpture: "The copper and tin of this statue come from the Belgian Congo"
+    </string>
+    <string name="descriptionGodfried">
+Godfrey of Bouillon was Duke of Lower Lorraine (from 1089-1100) and one of the leaders of the First Crusade. He was also proclaimed the first king of the kingdom of Jerusalem but refused that title.
+
+After the independence of Belgium in 1830, the young government decided to place statues of great figures from the "national" past throughout the country. The equestrian statue of Godfrey of Bouillon, created by Eugène Simonis in 1848, has since been central to Koningsplein.
+    </string>
+    <string name="hoegrootismannekepisAntw1">58 cm</string>
+    <string name="hoegrootismannekepisAntw2">1m 20cm</string>
+    <string name="hoegrootismannekepisAntw3">1m</string>
+    <string name="hoegrootismannenpisVraag">How big is Manneken Pis?</string>
+    <string name="geraardsbergen">Geraardsbergen</string>
+    <string name="halle">Halle</string>
+    <string name="aalst">Aalst</string>
+    <string name="WaarstaaternogeenmannekenpisVraag">In what other belgian city stands Manneken Pis?</string>
+    <string name="data1987">1987</string>
+    <string name="data1948">1948</string>
+    <string name="data2002">2002</string>
+    <string name="InwelkjaarisjeanekepisgeplaatstVraag">In which year was Jeaneke Pis placed?</string>
+    <string name="huisnummer1012">10 - 12</string>
+    <string name="huisnummer2527">25 - 27</string>
+    <string name="huisnummer12">1 - 2</string>
+    <string name="tussenwelkehuisnummersstaatzeVraag">Between which house numbers is she sitting?</string>
+    <string name="oostende">Oostende</string>
+    <string name="brugge">Brugge</string>
+    <string name="antwerpen">Antwerpen</string>
+    <string name="InwelkestadstaatnogeenleopoldVraag">In what other belgian city stands a horseman statue of Leopold II?</string>
+    <string name="data1848">1848</string>
+    <string name="data1100">1100</string>
+    <string name="data1830">1830</string>
+    <string name="InwelkjaarisgodfriedgemaaktVraag">In what year was the statue of Godfrey of Bouillon sized?</string>
+    <string name="next">Next</string>
+
 </resources>

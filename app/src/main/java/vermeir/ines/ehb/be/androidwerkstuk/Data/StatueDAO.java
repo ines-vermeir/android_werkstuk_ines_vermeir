@@ -44,7 +44,6 @@ public abstract class StatueDAO {
         }
     }
 
-    //TODO: in dao question plaatsen
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     abstract void insertQuestions(List<Question> questions);
 

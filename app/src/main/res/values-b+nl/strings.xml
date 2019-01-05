@@ -1,0 +1,84 @@
+
+<resources>
+    <string name="app_name">Standbeelden challange Brussel</string>
+    <string name="title_activity_maps"></string>
+    <string name="Welcome">Standbeelden challange Brussel</string>
+    <string name="start">Start de challange</string>
+    <string name="ask_permision">Locatie is vereist.</string>
+    <string name="permission_ok">Toestaan</string>
+    <string name="title_activity_question">Vragen</string>
+    <string name="snackbarCameraPermission">Camera is nodig om QR codes te kunnen scannen.</string>
+    <string name="standbeeldenStart">Standbeelden</string>
+    <string name="info">Informatie over het standbeeld</string>
+    <string name="location">In de buurt</string>
+    <string name="nameMannekepis">Manneke pis</string>
+    <string name="jeanekepis">Jeaneke pis</string>
+    <string name="leopold">Ruitersstandbeeld Leopold II</string>
+    <string name="godfried">Godfried van Bouillon</string>
+    <string name="continue_the_tour">Terug naar de map</string>
+    <string name="descriptionMannekepis">Het 58 cm grote ventje op een sokkel is geplaatst aan de hoek van de Stoofstraat en de Eikstraat, niet ver van de Grote Markt.
+
+Het is uitgegroeid tot een van de beroemdste Belgische en Brusselse monumenten en een symbool/mascotte van de stad Brussel.
+
+Behalve het Manneken Pis van Brussel is er ook een in Geraardsbergen, Westmeerbeek, Broksele en Koksijde, maar die van Brussel is de bekendste.
+
+Vanaf 1452 verschijnt de naam Manneken Pis in de archieven.
+
+Het origineel van het huidige bronzen beeldje is door Hiëronymus Duquesnoy de Oudere in 1619 in opdracht van het stadsbestuur gemaakt als versiering van een publieke fontein. Daarbij lijkt het alsof het jongetje urineert. Bij speciale gelegenheden plast hij bier of wijn in plaats van water.
+
+Omstreeks 1745 ontvoerden Engelse soldaten hem in het geheim, maar de Brusselaars haalden de dieven in Geraardsbergen in dankzij behulpzame burgers van die stad. Als blijk van hun waardering schonken de Brusselaars deze stad een replica van het beeldje.
+
+Manneken Pis werd "ontvoerd" door de Antwerpse studentenclub de Wikings in de ijskoude nacht van 16 op 17 januari 1963. Hiermee haalde de studentenclub wereldwijd de krantenkoppen. Omdat het om een goed doel ging werden er geen sancties getroffen. De grap bracht 80.000 BEF op ten bate van mindervaliden.
+
+De replica van Manneken Pis werd op 26 april 1978 "gestolen" door studenten van Technica, als stunt voor een presesverkiezing. Ze lieten hem op hun school zijn ding doen. Als straf moesten ze een nieuw kostuum voor hem maken. Elk jaar draagt Manneken Pis dit kostuum op de dag waarop ze hun nieuwe studenten dopen en sluiten ze er een vat bier aan waardoor hij bier plast.
+</string>
+
+    <string name="descriptionJeanekepis">
+        Jeanneke Pis is een standbeeld in het centrum van Brussel van een meisje dat aan het plassen is.
+
+Het beeldje is geplaatst in 1987 op initiatief van de lokale handelaren met de bedoeling meer bezoekers te lokken naar hun straat.
+
+Het beeld is geplaatst achteraan in de doodlopende Getrouwheidsgang.
+
+Het standbeeld staat net tussen de huisnummers 10 en 12.
+
+    </string>
+    <string name="descriptionLeopold">
+        Dit ruiterstandbeeld van koning Leopold II werd ingehuldigd op 15 november 1926, ongeveer op dezelfde plaats waar Leopold II zelf ooit zijn eed aflegde. Leopold II was koning van België van 1865 tot zijn dood in 1909. Dit bronzen beeld werd door beeldhouwer Thomas Vinçotte en architect François Malfait gemaakt.
+
+Opschrift achteraan het beeld: “Het koper en tin van dit beeld komen uit het Belgisch Congo”
+
+
+    </string>
+    <string name="descriptionGodfried">
+        Godfried van Bouillon was hertog van Neder-Lotharingen (van 1089-1100) en één van de leiders van de Eerste Kruistocht. Hij werd tevens uitgeroepen tot de eerste koning van het koninkrijk Jeruzalem maar weigerde die titel.
+
+Na de onafhankelijkheid van België in 1830 besliste de jonge regering om overal in het land standbeelden te plaatsen van grote figuren uit het "nationale" verleden. Centraal op het Koningsplein staat sindsdien het ruiterstandbeeld van Godfried van Bouillon, gemaakt door Eugène Simonis in 1848.
+
+    </string>
+    <string name="hoegrootismannekepisAntw1">58 cm</string>
+    <string name="hoegrootismannekepisAntw2">1m 20cm</string>
+    <string name="hoegrootismannekepisAntw3">1m</string>
+    <string name="hoegrootismannenpisVraag">Hoe groot is Manneken Pis?</string>
+    <string name="geraardsbergen">Geraardsbergen</string>
+    <string name="halle">Halle</string>
+    <string name="aalst">Aalst</string>
+    <string name="WaarstaaternogeenmannekenpisVraag">In welke belgische stad staat er nog een Manneken Pis?</string>
+    <string name="data1987">1987</string>
+    <string name="data1948">1948</string>
+    <string name="data2002">2002</string>
+    <string name="InwelkjaarisjeanekepisgeplaatstVraag">In welk jaar is Jeaneke Pis geplaatst?</string>
+    <string name="huisnummer1012">10 - 12</string>
+    <string name="huisnummer2527">25 - 27</string>
+    <string name="huisnummer12">1 - 2</string>
+    <string name="tussenwelkehuisnummersstaatzeVraag">Tussen welke huisnummers staat ze?</string>
+    <string name="oostende">Oostende</string>
+    <string name="brugge">Brugge</string>
+    <string name="antwerpen">Antwerpen</string>
+    <string name="InwelkestadstaatnogeenleopoldVraag">In welke belgische stad staat er nog een ruitersstandbeeld van Leopold II?</string>
+    <string name="data1848">1848</string>
+    <string name="data1100">1100</string>
+    <string name="data1830">1830</string>
+    <string name="InwelkjaarisgodfriedgemaaktVraag">In welk jaar is het standbeeld van Godfried  van Bouillon gemaatk?</string>
+    <string name="next">Volgende</string>
+</resources>

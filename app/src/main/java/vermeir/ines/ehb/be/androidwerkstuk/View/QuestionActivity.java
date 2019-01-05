@@ -75,12 +75,12 @@ public class QuestionActivity extends AppCompatActivity {
         }
 
         Button button = new Button(this);
-        button.setText("Volgende");
-        //TODO: string value van maken
+        button.setText(R.string.next);
         linearLayout.addView(button);
         button.setOnClickListener(v -> CheckAnswers());
     }
 
+    //TODO als niets is aangeduid
     private void CheckAnswers(){
         boolean correct = true;
 

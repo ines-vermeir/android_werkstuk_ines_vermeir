@@ -8,9 +8,12 @@
     tools:layout_editor_absoluteY="81dp">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:layout_constraintStart_toStartOf="@+id/relativeLayout"
+        app:layout_constraintTop_toTopOf="@+id/relativeLayout">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -21,31 +24,37 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:map="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/map"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        map:layout_constraintBottom_toBottomOf="parent"
-        map:layout_constraintEnd_toEndOf="parent"
-        map:layout_constraintStart_toStartOf="parent"
-        map:layout_constraintTop_toTopOf="parent"
-        tools:context="vermeir.ines.ehb.be.androidwerkstuk.View.MapsActivity" />
-
-    <ImageButton
-        android:id="@+id/qrButton"
-        android:layout_width="85dp"
-        android:layout_height="85dp"
-        android:layout_marginBottom="12dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/zxing_transparent"
-        android:onClick="scanForQRCode"
-        android:scaleType="fitXY"
-        android:src="@drawable/ic_qrcodebtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginRight="16dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:map="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            tools:context="vermeir.ines.ehb.be.androidwerkstuk.View.MapsActivity" />
+
+        <ImageButton
+            android:id="@+id/qrButton"
+            android:layout_width="300px"
+            android:layout_height="300px"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp"
+            android:background="@color/zxing_transparent"
+            android:onClick="scanForQRCode"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_qrcodebtn" />
+
+    </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
