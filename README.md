@@ -1,6 +1,6 @@
 QR CODES EN ANTWOORDEN OM DE CHALLANGE TE KUNNEN VOLBRENGEN
 
-De qr codes zijn terug te vinden op deze link: https://drive.google.com/file/d/1-qoIQqDjt7O7wJVyEDGZMzvngAoouT1O/view?usp=sharing
+De qr codes zijn terug te vinden op deze link: https://drive.google.com/drive/folders/1Y6ZEAzRZxjUReEwT2WIBFIYSaPqI4di9?usp=sharing
 
 Manneken Pis:
 
