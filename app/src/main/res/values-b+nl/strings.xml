@@ -1,7 +1,7 @@
 
 <resources>
     <string name="app_name">Standbeelden challange Brussel</string>
-    <string name="title_activity_maps"></string>
+    <string name="title_activity_maps">Map activity</string>
     <string name="Welcome">Standbeelden challange Brussel</string>
     <string name="start">Start de challange</string>
     <string name="ask_permision">Locatie is vereist.</string>
@@ -81,4 +81,15 @@ Na de onafhankelijkheid van België in 1830 besliste de jonge regering om overal
     <string name="data1830">1830</string>
     <string name="InwelkjaarisgodfriedgemaaktVraag">In welk jaar is het standbeeld van Godfried  van Bouillon gemaatk?</string>
     <string name="next">Volgende</string>
+
+
+    <string name="reset">Reset</string>
+    <string name="instructions">Instructions</string>
+
+    <!-- TODO: vertaal -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ok">OK</string>
+    <string name="howtomsg">1. Walk to the statues where you will find a QR code \n  2. Scan to QR code  \n 3. answer the question (you will find the answer near or on the statues  \n When you answered correctly you will get more information about the statue  \n  Enjoy!</string>
+    <string name="howtotitle">How to do the challange?</string>
+    <string name="errorVragen">Answer all question to continue.</string>
 </resources>

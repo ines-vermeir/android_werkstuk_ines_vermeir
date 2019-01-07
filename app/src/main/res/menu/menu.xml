@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="vermeir.ines.ehb.be.androidwerkstuk.View.MapsActivity">
+
+    <item
+        android:id="@+id/action_reset"
+        android:icon="@drawable/reset_btn"
+        android:title="@string/reset"
+        app:showAsAction="ifRoom"/>
+
+
+    <item android:id="@+id/action_howto"
+        android:icon="@drawable/ic_howto_btn"
+        android:title="@string/instructions"
+        app:showAsAction="ifRoom"/>
+
+</menu>
+    <!--werkt niet doordat activity niet van appcompat extends-->

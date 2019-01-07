@@ -14,6 +14,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
@@ -28,6 +29,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MapStyleOptions;
@@ -41,7 +43,7 @@ import vermeir.ines.ehb.be.androidwerkstuk.Model.Statue;
 import vermeir.ines.ehb.be.androidwerkstuk.R;
 
 //TODO controle als persmisie niet geven is
-public class MapsActivity extends FragmentActivity implements View.OnClickListener, OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener, GoogleMap.OnMarkerClickListener {
+public class MapsActivity extends FragmentActivity implements   View.OnClickListener, OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener, GoogleMap.OnMarkerClickListener {
 
     private GoogleMap mMap;
 
@@ -67,6 +69,17 @@ public class MapsActivity extends FragmentActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_back_btn);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -90,8 +103,29 @@ public class MapsActivity extends FragmentActivity implements View.OnClickListen
 
     }
 
+    /*werkt niet omdat activity van AppCompat extends
 
-    //TODO zorgen dat de locatie wordt gevolgd
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.action_howto:
+                return true;
+            case R.id.action_reset:
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }*/
+
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -205,16 +239,25 @@ public class MapsActivity extends FragmentActivity implements View.OnClickListen
 
     }
 
-    //TODO: markers maken zodat deze van kleur veranderen wanneer complete
+
     private void initializeMarkers() {
         latLngBounds = new LatLngBounds.Builder();
 
         if(statues != null && !statues.isEmpty() ) {
             for (Statue statue : statues) {
-                mMap.addMarker(new MarkerOptions()
-                        .position(new LatLng(statue.getLat(), statue.getLng()))
-                        .title(statue.getName()));
-                latLngBounds.include(new LatLng(statue.getLat(), statue.getLng()));
+                if(statue.isComplete() == Boolean.TRUE) {
+                    mMap.addMarker(new MarkerOptions()
+                            .position(new LatLng(statue.getLat(), statue.getLng()))
+                            .title(statue.getName())
+                            .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+                    latLngBounds.include(new LatLng(statue.getLat(), statue.getLng()));
+                }else{
+                    mMap.addMarker(new MarkerOptions()
+                            .position(new LatLng(statue.getLat(), statue.getLng()))
+                            .title(statue.getName())
+                            .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+                    latLngBounds.include(new LatLng(statue.getLat(), statue.getLng()));
+                }
             }
 
 
@@ -295,13 +338,16 @@ public class MapsActivity extends FragmentActivity implements View.OnClickListen
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         String result = QRCodeUtil.onScanResult(this, requestCode,resultCode,data);
+        if(result == null){
+            return;
+        }
         int resultint = Integer.parseInt(result);
         for (Statue statue : statues) {
             if(statue.getId()== resultint){
                 goToQuestion(statue);
                 break;
             }else{
-                Toast.makeText(this, "Kan het standbeeld niet vinden", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Foute QR code", Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -312,5 +358,23 @@ public class MapsActivity extends FragmentActivity implements View.OnClickListen
         intent.putExtra("statueId", statue.getId());
         startActivity(intent);
     }
+
+    public void resetChallange(View view) {
+        mStatuesViewModel = ViewModelProviders.of(this).get(StatueViewModel.class);
+
+        for(Statue statue :statues){
+            statue.setComplete(Boolean.FALSE);
+            mStatuesViewModel.update(statue);
+        }
+        finish();
+        startActivity(getIntent());
+    }
+
+    public void showHowTo(View view) {
+        HowToDialogFragment dialogFragment = new HowToDialogFragment();
+        dialogFragment.show(getFragmentManager(), "HowToDialogFragment");
+    }
+
+
 
 }

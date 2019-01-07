@@ -6,11 +6,13 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Iterator;
 import java.util.Map;
@@ -33,7 +35,14 @@ public class QuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_back_btn);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         Bundle data = getIntent().getExtras();
         int statueId = data.getInt("statueId");
@@ -80,7 +89,6 @@ public class QuestionActivity extends AppCompatActivity {
         button.setOnClickListener(v -> CheckAnswers());
     }
 
-    //TODO als niets is aangeduid
     private void CheckAnswers(){
         boolean correct = true;
 
@@ -88,11 +96,16 @@ public class QuestionActivity extends AppCompatActivity {
             RadioGroup radioGroup = (RadioGroup) findViewById(question.getId() + 1000);
             int selectedId = radioGroup.getCheckedRadioButtonId();
             RadioButton radioButton = (RadioButton) findViewById(selectedId);
-            String selected = (String)radioButton.getText().toString();
-
-            if(question.getAnswers().get(selected) != Boolean.TRUE) {
-                radioButton.setTextColor(Color.RED);
+            if(radioButton == null){
                 correct = false;
+                Toast.makeText(this, R.string.errorVragen, Toast.LENGTH_LONG).show();
+            }else {
+                String selected = (String) radioButton.getText().toString();
+
+                if (question.getAnswers().get(selected) != Boolean.TRUE) {
+                    radioButton.setTextColor(Color.RED);
+                    correct = false;
+                }
             }
         }
 
