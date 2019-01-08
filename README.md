@@ -54,8 +54,11 @@ Godfried van Bouillon:
     
     
 BRONNEN:
+
 zxing - barcode scanning
+
 flaticon - icons
+
 android asset studio - app icon
    
  
