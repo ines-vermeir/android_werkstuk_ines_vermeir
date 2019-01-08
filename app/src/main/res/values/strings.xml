@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Statues challenge Brussels</string>
     <string name="title_activity_maps">Map activity</string>
-    <string name="Welcome">Statues challenge Brussels</string>
+    <string name="Welcome">Statues challenge</string>
     <string name="start">Start the challange</string>
     <string name="ask_permision">Location is required.</string>
     <string name="permission_ok">allow</string>
@@ -9,7 +9,7 @@
     <string name="snackbarCameraPermission">Camera is required to scan QR codes.</string>
     <string name="standbeeldenStart">Statues</string>
     <string name="info">Information about the statue</string>
-    <string name="location">Nearby</string>
+    <string name="location">Picture</string>
     <string name="nameMannekepis">Manneke pis</string>
     <string name="jeanekepis">Jeaneke pis</string>
     <string name="leopold">Horseman statue Leopold II</string>

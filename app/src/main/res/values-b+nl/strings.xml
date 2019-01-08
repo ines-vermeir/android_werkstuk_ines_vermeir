@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Standbeelden challange Brussel</string>
     <string name="title_activity_maps">Map activity</string>
-    <string name="Welcome">Standbeelden challange Brussel</string>
+    <string name="Welcome">Standbeelden challange</string>
     <string name="start">Start de challange</string>
     <string name="ask_permision">Locatie is vereist.</string>
     <string name="permission_ok">Toestaan</string>
@@ -10,7 +10,7 @@
     <string name="snackbarCameraPermission">Camera is nodig om QR codes te kunnen scannen.</string>
     <string name="standbeeldenStart">Standbeelden</string>
     <string name="info">Informatie over het standbeeld</string>
-    <string name="location">In de buurt</string>
+    <string name="location">Foto</string>
     <string name="nameMannekepis">Manneke pis</string>
     <string name="jeanekepis">Jeaneke pis</string>
     <string name="leopold">Ruitersstandbeeld Leopold II</string>

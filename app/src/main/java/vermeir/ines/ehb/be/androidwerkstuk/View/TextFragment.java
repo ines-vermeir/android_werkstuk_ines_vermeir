@@ -2,6 +2,7 @@ package vermeir.ines.ehb.be.androidwerkstuk.View;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +30,7 @@ public class TextFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_text, container, false);
 
         textViewInfo = view.findViewById(R.id.txtInfo);
+        textViewInfo.setMovementMethod(new ScrollingMovementMethod());
         imageView = view.findViewById(R.id.fotoStatue);
 
 
@@ -39,11 +41,15 @@ public class TextFragment extends Fragment {
 
     public void setTextFragment(String description) {
 
+        imageView.setVisibility(View.INVISIBLE);
         textViewInfo.setText(description);
+        textViewInfo.setTextSize(20);
     }
 
     public void setImgFragment(int id) {
 
+        textViewInfo.setText("");
+        imageView.setVisibility(View.VISIBLE);
         if(id == 1) {
             imageView.setImageResource(R.drawable.manneken_pis);
         }
@@ -55,7 +61,7 @@ public class TextFragment extends Fragment {
 
         }
         if(id == 4) {
-            imageView.setImageResource(R.drawable.godfried);
+            imageView.setImageResource(R.drawable.godfried_van_bouillon);
 
         }
     }
