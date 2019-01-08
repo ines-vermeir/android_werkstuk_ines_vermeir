@@ -51,5 +51,11 @@ Godfried van Bouillon:
     Vraag: In welk jaar is het standbeeld van Godfried van Bouillon gemaakt?
   
     Antwoord: 1848
+    
+    
+BRONNEN:
+zxing - barcode scanning
+flaticon - icons
+android asset studio - app icon
    
  
