@@ -5,7 +5,8 @@ De qr codes zijn terug te vinden op deze link: https://drive.google.com/drive/fo
 Manneken Pis:
 
 
- QRCODE: 1
+ QRCODE: 1 
+![alt txt](qrCodes/1.png)
   
     Vraag: Hoe groot is Manneken Pis?
   
@@ -20,6 +21,7 @@ Jeaneke Pis:
 
 
   QRCODE: 2
+  ![alt txt](qrCodes/2.png)
   
      Vraag: In welk jaar is Jeaneke pis geplaatst?
   
@@ -34,6 +36,7 @@ Ruitersstandbeeld van Leopold II:
 
 
   QRCODE: 3
+  ![alt txt](qrCodes/3.png)
   
     Vraag: In welke andere belgische stad staat er nog een ruitersstandbeeld van Leopold II?
   
@@ -43,6 +46,7 @@ Godfried van Bouillon:
 
 
   QRCODE: 4
+  ![alt txt](qrCodes/4.png)
   
     Vraag: In welk jaar is het standbeeld van Godfried van Bouillon gemaakt?
   
