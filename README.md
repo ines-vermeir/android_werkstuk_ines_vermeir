@@ -1,8 +1,8 @@
-QR CODES EN ANTWOORDEN OM DE CHALLANGE TE KUNNEN VOLBRENGEN
+#QR CODES EN ANTWOORDEN OM DE CHALLANGE TE KUNNEN VOLBRENGEN
 
-De qr codes zijn terug te vinden op deze link: https://drive.google.com/drive/folders/1Y6ZEAzRZxjUReEwT2WIBFIYSaPqI4di9?usp=sharing
+De qr codes zijn terug te vinden op deze [link](https://drive.google.com/drive/folders/1Y6ZEAzRZxjUReEwT2WIBFIYSaPqI4di9?usp=sharing)
 
-Manneken Pis:
+### Manneken Pis:
 
 
  QRCODE: 1 
@@ -17,7 +17,7 @@ Manneken Pis:
     Antwoord: Geraardsbergen
     
  
-Jeaneke Pis: 
+### Jeaneke Pis: 
 
 
   QRCODE: 2
@@ -32,7 +32,7 @@ Jeaneke Pis:
     Antwoord: 10-12
     
     
-Ruitersstandbeeld van Leopold II: 
+### Ruitersstandbeeld van Leopold II: 
 
 
   QRCODE: 3
@@ -42,7 +42,7 @@ Ruitersstandbeeld van Leopold II:
   
     Antwoord: Oostende
     
-Godfried van Bouillon: 
+### Godfried van Bouillon: 
 
 
   QRCODE: 4
@@ -53,7 +53,7 @@ Godfried van Bouillon:
     Antwoord: 1848
     
     
-BRONNEN:
+## BRONNEN:
 
 zxing - barcode scanning
 
