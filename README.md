@@ -1,4 +1,4 @@
-#QR CODES EN ANTWOORDEN OM DE CHALLANGE TE KUNNEN VOLBRENGEN
+# QR CODES EN ANTWOORDEN OM DE CHALLANGE TE KUNNEN VOLBRENGEN
 
 De qr codes zijn terug te vinden op deze [link](https://drive.google.com/drive/folders/1Y6ZEAzRZxjUReEwT2WIBFIYSaPqI4di9?usp=sharing)
 
