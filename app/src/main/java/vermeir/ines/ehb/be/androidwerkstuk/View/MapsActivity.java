@@ -42,7 +42,7 @@ import java.util.List;
 import vermeir.ines.ehb.be.androidwerkstuk.Model.Statue;
 import vermeir.ines.ehb.be.androidwerkstuk.R;
 
-//TODO controle als persmisie niet geven is
+
 public class MapsActivity extends FragmentActivity implements   View.OnClickListener, OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener, GoogleMap.OnMarkerClickListener {
 
     private GoogleMap mMap;
@@ -207,11 +207,11 @@ public class MapsActivity extends FragmentActivity implements   View.OnClickList
                     // permission was granted, yay! Do the
                     // contacts-related task you need to do.
                     mMap.setMyLocationEnabled(true);
-                    Toast.makeText(this, "location permission granted", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(this, "location permission granted", Toast.LENGTH_LONG).show();
                 } else {
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
-                    Toast.makeText(this, "location permission denied", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(this, "location permission denied", Toast.LENGTH_LONG).show();
                 }
                 return;
             }
@@ -219,12 +219,12 @@ public class MapsActivity extends FragmentActivity implements   View.OnClickList
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
-                    Toast.makeText(this, "camera permission granted", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(this, "camera permission granted", Toast.LENGTH_LONG).show();
                     QRCodeUtil.startQRScan(this);
 
                 } else {
 
-                    Toast.makeText(this, "camera permission denied", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(this, "camera permission denied", Toast.LENGTH_LONG).show();
 
                 }
             }
@@ -249,13 +249,13 @@ public class MapsActivity extends FragmentActivity implements   View.OnClickList
                     mMap.addMarker(new MarkerOptions()
                             .position(new LatLng(statue.getLat(), statue.getLng()))
                             .title(statue.getName())
-                            .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+                            .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
                     latLngBounds.include(new LatLng(statue.getLat(), statue.getLng()));
                 }else{
                     mMap.addMarker(new MarkerOptions()
                             .position(new LatLng(statue.getLat(), statue.getLng()))
                             .title(statue.getName())
-                            .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+                            .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
                     latLngBounds.include(new LatLng(statue.getLat(), statue.getLng()));
                 }
             }
@@ -339,6 +339,7 @@ public class MapsActivity extends FragmentActivity implements   View.OnClickList
         super.onActivityResult(requestCode, resultCode, data);
         String result = QRCodeUtil.onScanResult(this, requestCode,resultCode,data);
         if(result == null){
+            Toast.makeText(this, R.string.fouteqr, Toast.LENGTH_SHORT).show();
             return;
         }
         int resultint = Integer.parseInt(result);
@@ -347,7 +348,7 @@ public class MapsActivity extends FragmentActivity implements   View.OnClickList
                 goToQuestion(statue);
                 break;
             }else{
-                Toast.makeText(this, "Foute QR code", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.fouteqr, Toast.LENGTH_SHORT).show();
             }
         }
 

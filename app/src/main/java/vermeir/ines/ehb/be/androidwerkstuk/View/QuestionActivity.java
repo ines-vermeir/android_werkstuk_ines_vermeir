@@ -78,7 +78,6 @@ public class QuestionActivity extends AppCompatActivity {
 
             }
 
-            //TODO antwoorden random zetten
             radioGroup.setId(question.getId() + 1000);
             linearLayout.addView(radioGroup);
         }
@@ -102,7 +101,7 @@ public class QuestionActivity extends AppCompatActivity {
             }else {
                 String selected = (String) radioButton.getText().toString();
 
-                if (question.getAnswers().get(selected) != Boolean.TRUE) {
+                if (check(question.getAnswers().get(selected))) {
                     radioButton.setTextColor(Color.RED);
                     correct = false;
                 }
@@ -115,6 +114,14 @@ public class QuestionActivity extends AppCompatActivity {
             startActivity(intent);
         }else{
             return;
+        }
+    }
+
+    public boolean check(Boolean answer){
+        if(answer != Boolean.TRUE){
+            return true;
+        }else{
+            return false;
         }
     }
 }

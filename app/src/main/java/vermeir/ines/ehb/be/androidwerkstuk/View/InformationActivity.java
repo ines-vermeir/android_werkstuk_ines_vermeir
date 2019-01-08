@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import vermeir.ines.ehb.be.androidwerkstuk.Model.Statue;
@@ -48,12 +49,15 @@ public class InformationActivity extends AppCompatActivity implements ButtonFrag
         switch (id){
             case 1 : textFragment.setTextFragment(statue.getDescription()); break;
             case 2 :
-                //TODO: iets vinden om hier te plaatsen
-                textFragment.setTextFragment("adres"); break;
+
+                textFragment.setImgFragment(statue.getId());
+                break;
         }
 
 
     }
+
+
 
     public void backToMap(View view) {
         Intent intent = new Intent(this, MapsActivity.class);

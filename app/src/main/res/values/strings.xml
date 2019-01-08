@@ -5,7 +5,7 @@
     <string name="start">Start the challange</string>
     <string name="ask_permision">Location is required.</string>
     <string name="permission_ok">allow</string>
-    <string name="title_activity_question">Questions</string>
+    <string name="title_activity_question">Correct!</string>
     <string name="snackbarCameraPermission">Camera is required to scan QR codes.</string>
     <string name="standbeeldenStart">Statues</string>
     <string name="info">Information about the statue</string>
@@ -73,11 +73,11 @@ After the independence of Belgium in 1830, the young government decided to place
     <string name="reset">Reset</string>
     <string name="instructions">Instructions</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="ok">OK</string>
-    <string name="howtomsg">1. Walk to the statues where you will find a QR code   2. Scan to QR code   3. answer the question (you will find the answer near or on the statues   When you answered correctly you will get more information about the statue   Enjoy!</string>
+    <string name="howtomsg">There is no order in how to complete each challange. You will have to find your own way to each statue. \n\n1. Walk to the statues where you will find a QR code \n2. Scan to QR code  \n3. answer the question (you will find the answer near or on the statues)  \n \nWhen you answered correctly you will get more information about the statue  \n\n\n  Enjoy!</string>
     <string name="howtotitle">How to do the challange?</string>
-    <string name="errorVragen">Answer all question to continue.</string>
+    <string name="errorVragen">Answer all questions to continue.</string>
+    <string name="fouteqr">Error has occurred while scanning QR code</string>
 
 </resources>
